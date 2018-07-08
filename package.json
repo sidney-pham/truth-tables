@@ -1,0 +1,28 @@
+{
+  "name": "truth-tables",
+  "version": "1.0.0",
+  "description": "A truth table generator.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "parcel index.html"
+  },
+  "author": "Sidney Pham",
+  "license": "ISC",
+  "dependencies": {
+    "app.css": "^0.1.2",
+    "postcss-modules": "^1.1.0",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1"
+  },
+  "devDependencies": {
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^17.0.0",
+    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-jsx-a11y": "^6.1.0",
+    "eslint-plugin-react": "^7.10.0",
+    "parcel-bundler": "^1.9.4"
+  }
+}
