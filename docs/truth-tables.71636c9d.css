@@ -10,6 +10,8 @@ body {
 }
 
 main {
+  padding: 20px;
+  padding-bottom: 0;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -17,51 +19,69 @@ main {
   color: white;
 }
 
-._app_4a0iq_20 {
-  padding: 20px;
+._app_1eusi_22 {
+  position: relative;
+  margin: 0;
+  padding: 0;
   flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-._heading_4a0iq_28 {
+._heading_1eusi_32 {
   margin: 0;
 }
 
-._description_4a0iq_32 {
+._description_1eusi_36 {
   margin: 20px 0;
 }
 
-._inputBox_4a0iq_36 {
+._inputBox_1eusi_40 {
   padding: 10px;
   font-size: 18px;
   outline: 0;
   width: 40%;
 }
 
-._footer_4a0iq_43 {
+._footer_1eusi_47 {
   height: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-._GitHubLogo_4a0iq_50 {
+._GitHubLogo_1eusi_54 {
   height: 50px;
 }
 
 .fa-github {
   font-size: 2.5em;
   color: #ddd;
+  transition: color 0.1s linear; 
 }
 
 .fa-github:hover {
   color: #fff;
 }
 
-.fa-github {
-  transition: color 0.1s linear; 
+._helpButton_1eusi_68 {
+  border: 0;
+  background: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+._helpButton_1eusi_68 .fa-question-circle {
+  font-size: 4em;
+  color: #fff;
+  cursor: pointer;
+  transition: color 0.1s linear;
+}
+
+._helpButton_1eusi_68 .fa-question-circle:hover {
+  color: #eee;
 }
 ._truthTable_1sph2_1, ._truthTable_1sph2_1 th, ._truthTable_1sph2_1 td {
   border: 1px solid white;
@@ -81,4 +101,67 @@ main {
 ._truthTable_1sph2_1 th, ._truthTable_1sph2_1 td {
   padding: 8px;
   text-align: center;
+}
+._modal_1fqcv_1 {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.3);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+  pointer-events: none;
+  transition: all 0.3s;
+}
+
+._open_1fqcv_13 {
+  pointer-events: auto;
+  opacity: 1;
+}
+
+._closed_1fqcv_18 {
+  opacity: 0;
+}
+
+._content_1fqcv_22 {
+  width: 50%;
+  position: relative;
+  margin: 10% auto;
+  padding: 30px;
+  background: #fff;
+  color: #444;
+}
+
+@media (max-width: 1080px) {
+  ._content_1fqcv_22 {
+    width: 70%;
+  }
+}
+
+@media (max-width: 720px) {
+  ._content_1fqcv_22 {
+    width: 90%;
+  }
+}
+
+._closeButton_1fqcv_43 {
+  color: #aaa;
+  font-size: 2em;
+  border: 0;
+  background: none;
+  transition: color 0.1s linear;
+  position: absolute;
+  top: 30px;
+  right: 30px; /* Fix hardcoding here. */
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+}
+
+._closeButton_1fqcv_43:hover {
+  color: #000;
+}
+
+._header_1fqcv_61 {
+  margin: 0 0 30px 0;
 }

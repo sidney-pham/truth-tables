@@ -10,6 +10,8 @@ body {
 }
 
 main {
+  padding: 20px;
+  padding-bottom: 0;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -18,7 +20,9 @@ main {
 }
 
 .app {
-  padding: 20px;
+  position: relative;
+  margin: 0;
+  padding: 0;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -54,12 +58,28 @@ main {
 :global(.fa-github) {
   font-size: 2.5em;
   color: #ddd;
+  transition: color 0.1s linear; 
 }
 
 :global(.fa-github):hover {
   color: #fff;
 }
 
-:global(.fa-github) {
-  transition: color 0.1s linear; 
+.helpButton {
+  border: 0;
+  background: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.helpButton :global(.fa-question-circle) {
+  font-size: 4em;
+  color: #fff;
+  cursor: pointer;
+  transition: color 0.1s linear;
+}
+
+.helpButton :global(.fa-question-circle):hover {
+  color: #eee;
 }
