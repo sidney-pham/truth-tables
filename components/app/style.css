@@ -6,22 +6,60 @@
 body {
   margin: 0;
   padding: 0;
+  background-color: teal;
+}
+
+main {
   min-height: 100vh;
-  background-color: grey;
+  display: flex;
+  flex-direction: column;
+  background-color: teal;
+  color: white;
 }
 
 .app {
-  background-color: teal;
   padding: 20px;
+  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: white;
+}
+
+.heading {
+  margin: 0;
+}
+
+.description {
+  margin: 20px 0;
 }
 
 .inputBox {
   padding: 10px;
   font-size: 18px;
   outline: 0;
+  width: 40%;
 }
 
+.footer {
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.GitHubLogo {
+  height: 50px;
+}
+
+:global(.fa-github) {
+  font-size: 2.5em;
+  color: #ddd;
+}
+
+:global(.fa-github):hover {
+  color: #fff;
+}
+
+:global(.fa-github) {
+  transition: color 0.1s linear; 
+}

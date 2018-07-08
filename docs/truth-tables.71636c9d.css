@@ -6,35 +6,79 @@
 body {
   margin: 0;
   padding: 0;
-  min-height: 100vh;
-  background-color: grey;
+  background-color: teal;
 }
 
-._app_1uxjw_13 {
-  background-color: teal;
-  padding: 20px;
+main {
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  background-color: teal;
   color: white;
 }
 
-._inputBox_1uxjw_22 {
+._app_4a0iq_20 {
+  padding: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+._heading_4a0iq_28 {
+  margin: 0;
+}
+
+._description_4a0iq_32 {
+  margin: 20px 0;
+}
+
+._inputBox_4a0iq_36 {
   padding: 10px;
   font-size: 18px;
   outline: 0;
+  width: 40%;
 }
 
-._truthTable_1tmky_1, ._truthTable_1tmky_1 th, ._truthTable_1tmky_1 td {
+._footer_4a0iq_43 {
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+._GitHubLogo_4a0iq_50 {
+  height: 50px;
+}
+
+.fa-github {
+  font-size: 2.5em;
+  color: #ddd;
+}
+
+.fa-github:hover {
+  color: #fff;
+}
+
+.fa-github {
+  transition: color 0.1s linear; 
+}
+._truthTable_1sph2_1, ._truthTable_1sph2_1 th, ._truthTable_1sph2_1 td {
   border: 1px solid white;
 }
 
-._truthTable_1tmky_1 {
-  border-collapse: collapse;
-  margin: 30px 0;
+._truthTable_1sph2_1 th {
+  color: teal;
+  background-color: white;
 }
 
-._truthTable_1tmky_1 th, ._truthTable_1tmky_1 td {
+._truthTable_1sph2_1 {
+  border-collapse: collapse;
+  margin: 30px 0;
+  font-size: 20px;
+}
+
+._truthTable_1sph2_1 th, ._truthTable_1sph2_1 td {
   padding: 8px;
   text-align: center;
 }

@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "parcel index.html -d docs --public-url ./"
+    "start": "parcel index.html -d docs --public-url ./",
+    "debug": "parcel index.html -d docs"
   },
   "author": "Sidney Pham",
   "license": "ISC",
