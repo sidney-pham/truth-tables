@@ -1,3 +1,8 @@
+// TODO: "weather is nice" and "day is sunday".
+// TODO: Detect malformed expressions.
+// TODO: Detect unknown operators and give warnings.
+// TODO: T and F.
+
 // This saddens me too.
 Array.prototype.peek = function() {
   return this[this.length - 1];
@@ -12,6 +17,7 @@ Array.prototype.empty = function() {
 // TODO: Provide support for symbols like '~' and '->'.
 const OPERATORS = {
   and: {
+    aliases: ['&', '&&', '^', '/\\', 'conjunction'],
     precedence: 3,
     eval: stack => {
       const right = stack.pop();
@@ -21,6 +27,7 @@ const OPERATORS = {
     }
   },
   or: {
+    aliases: ['|', '||', '\\/', 'disjunction'],
     precedence: 2,
     eval: stack => {
       const right = stack.pop();
@@ -30,6 +37,7 @@ const OPERATORS = {
     }
   },
   xor: {
+    aliases: ['exclusiveor', 'exclusive-or'],
     precedence: 2, // I actually don't know what this should be.
     eval: stack => {
       const right = stack.pop();
@@ -39,6 +47,7 @@ const OPERATORS = {
     }
   },
   implies: {
+    aliases: ['->', '=>', 'then'],
     precedence: 1,
     eval: stack => {
       const right = stack.pop();
@@ -48,10 +57,31 @@ const OPERATORS = {
     }
   },
   not: {
+    aliases: ['~', '!', 'negation'],
     precedence: 4,
     eval: stack => {
       const operand = stack.pop();
       const res = !operand;
+      stack.push(res);
+    }
+  },
+  onlyif: {
+    aliases: ['<-', '<=', 'only-if'],
+    precedence: 1,
+    eval: stack => {
+      const right = stack.pop();
+      const left = stack.pop();
+      const res = left || !right;
+      stack.push(res);
+    }
+  },
+  iff: {
+    aliases: ['biconditional', 'if-and-only-if', 'ifandonlyif'],
+    precedence: 0,
+    eval: stack => {
+      const right = stack.pop();
+      const left = stack.pop();
+      const res = left === right;
       stack.push(res);
     }
   }
@@ -105,15 +135,13 @@ function parse(input) {
 }
 
 // Convert propositional formula into a bunch of tokens.
-// This is basically splitting the string and taking into account parentheses.
+// This is basically splitting the string and taking into account parentheses and
+// aliases for the 'not' operator.
 function lex(input) {
-  // Make everything lowercase because we're not pretentious.
-  input = input.toLowerCase();
-
-  const stack = [];
+  let stack = [];
   let token = '';
   for (const char of input) {
-    if (isParen(char)) {
+    if (isParen(char) || isNotOperatorAlias(char)) {
       if (token !== '') {
         stack.push(token);
         token = '';
@@ -132,6 +160,15 @@ function lex(input) {
     stack.push(token);
   }
 
+  // Convert operators to lower case.
+  stack = stack.map(token => {
+    if (isOperator(token.toLowerCase())) {
+      return token.toLowerCase();
+    } else {
+      return token;
+    }
+  });
+
   return stack;
 }
 
@@ -144,7 +181,19 @@ function getVariables(parsedInput) {
       variables.push(token);
     }
   }
-  return variables.sort();
+  // Sort case-insensitively. Yes, this is just
+  // variables.sort(key=lambda x: x.lower()) in Python. Don't blame me.
+  return variables.sort((a, b) => {
+    const x = a.toLowerCase();
+    const y = b.toLowerCase();
+    if (x > y) {
+      return 1;
+    }
+    if (y > x) {
+      return -1;
+    }
+    return 0;
+  });
 }
 
 // A truth assignment is a permutation of truth-values for each variable.
@@ -178,7 +227,7 @@ function evaluate(formula, truthValues) {
   // operands off the stack, then push the result of the operation onto the stack.
   for (const token of formula) {
     if (isOperator(token)) {
-      OPERATORS[token].eval(stack);
+      getOperator(token).eval(stack);
     } else {
       stack.push(truthValues[token]);
     }
@@ -189,15 +238,29 @@ function evaluate(formula, truthValues) {
 }
 
 function isOperator(token) {
-  return OPERATORS.hasOwnProperty(token);
+  return OPERATORS.hasOwnProperty(token)
+    || Object.values(OPERATORS).some(operator => operator.aliases.includes(token));
+}
+
+function getOperator(token) {
+  for (const [operatorName, operator] of Object.entries(OPERATORS)) {
+    if (operatorName === token || operator.aliases.includes(token)) {
+      return operator;
+    }
+  }
+  throw new Error(`Unknown operator ${token}`);
 }
 
 function isParen(token) {
   return token === '(' || token === ')';
 }
 
+function isNotOperatorAlias(token) {
+  return OPERATORS.not.aliases.includes(token);
+}
+
 function getPrecedence(operator) {
-  return OPERATORS[operator].precedence;
+  return getOperator(operator).precedence;
 }
 
 export {

@@ -19831,6 +19831,14 @@ module.exports = {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+
+var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
+
+// TODO: "weather is nice" and "day is sunday".
+// TODO: Detect malformed expressions.
+// TODO: Detect unknown operators and give warnings.
+// TODO: T and F.
+
 // This saddens me too.
 Array.prototype.peek = function () {
   return this[this.length - 1];
@@ -19845,6 +19853,7 @@ Array.prototype.empty = function () {
 // TODO: Provide support for symbols like '~' and '->'.
 var OPERATORS = {
   and: {
+    aliases: ['&', '&&', '^', '/\\', 'conjunction'],
     precedence: 3,
     eval: function _eval(stack) {
       var right = stack.pop();
@@ -19854,6 +19863,7 @@ var OPERATORS = {
     }
   },
   or: {
+    aliases: ['|', '||', '\\/', 'disjunction'],
     precedence: 2,
     eval: function _eval(stack) {
       var right = stack.pop();
@@ -19863,6 +19873,7 @@ var OPERATORS = {
     }
   },
   xor: {
+    aliases: ['exclusiveor', 'exclusive-or'],
     precedence: 2, // I actually don't know what this should be.
     eval: function _eval(stack) {
       var right = stack.pop();
@@ -19872,6 +19883,7 @@ var OPERATORS = {
     }
   },
   implies: {
+    aliases: ['->', '=>', 'then'],
     precedence: 1,
     eval: function _eval(stack) {
       var right = stack.pop();
@@ -19881,10 +19893,31 @@ var OPERATORS = {
     }
   },
   not: {
+    aliases: ['~', '!', 'negation'],
     precedence: 4,
     eval: function _eval(stack) {
       var operand = stack.pop();
       var res = !operand;
+      stack.push(res);
+    }
+  },
+  onlyif: {
+    aliases: ['<-', '<=', 'only-if'],
+    precedence: 1,
+    eval: function _eval(stack) {
+      var right = stack.pop();
+      var left = stack.pop();
+      var res = left || !right;
+      stack.push(res);
+    }
+  },
+  iff: {
+    aliases: ['biconditional', 'if-and-only-if', 'ifandonlyif'],
+    precedence: 0,
+    eval: function _eval(stack) {
+      var right = stack.pop();
+      var left = stack.pop();
+      var res = left === right;
       stack.push(res);
     }
   }
@@ -19959,11 +19992,9 @@ function parse(input) {
 }
 
 // Convert propositional formula into a bunch of tokens.
-// This is basically splitting the string and taking into account parentheses.
+// This is basically splitting the string and taking into account parentheses and
+// aliases for the 'not' operator.
 function lex(input) {
-  // Make everything lowercase because we're not pretentious.
-  input = input.toLowerCase();
-
   var stack = [];
   var token = '';
   var _iteratorNormalCompletion2 = true;
@@ -19974,7 +20005,7 @@ function lex(input) {
     for (var _iterator2 = input[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
       var char = _step2.value;
 
-      if (isParen(char)) {
+      if (isParen(char) || isNotOperatorAlias(char)) {
         if (token !== '') {
           stack.push(token);
           token = '';
@@ -20008,6 +20039,15 @@ function lex(input) {
     stack.push(token);
   }
 
+  // Convert operators to lower case.
+  stack = stack.map(function (token) {
+    if (isOperator(token.toLowerCase())) {
+      return token.toLowerCase();
+    } else {
+      return token;
+    }
+  });
+
   return stack;
 }
 
@@ -20027,6 +20067,8 @@ function getVariables(parsedInput) {
         variables.push(token);
       }
     }
+    // Sort case-insensitively. Yes, this is just
+    // variables.sort(key=lambda x: x.lower()) in Python. Don't blame me.
   } catch (err) {
     _didIteratorError3 = true;
     _iteratorError3 = err;
@@ -20042,7 +20084,17 @@ function getVariables(parsedInput) {
     }
   }
 
-  return variables.sort();
+  return variables.sort(function (a, b) {
+    var x = a.toLowerCase();
+    var y = b.toLowerCase();
+    if (x > y) {
+      return 1;
+    }
+    if (y > x) {
+      return -1;
+    }
+    return 0;
+  });
 }
 
 // A truth assignment is a permutation of truth-values for each variable.
@@ -20083,7 +20135,7 @@ function evaluate(formula, truthValues) {
       var token = _step4.value;
 
       if (isOperator(token)) {
-        OPERATORS[token].eval(stack);
+        getOperator(token).eval(stack);
       } else {
         stack.push(truthValues[token]);
       }
@@ -20109,15 +20161,57 @@ function evaluate(formula, truthValues) {
 }
 
 function isOperator(token) {
-  return OPERATORS.hasOwnProperty(token);
+  return OPERATORS.hasOwnProperty(token) || Object.values(OPERATORS).some(function (operator) {
+    return operator.aliases.includes(token);
+  });
+}
+
+function getOperator(token) {
+  var _iteratorNormalCompletion5 = true;
+  var _didIteratorError5 = false;
+  var _iteratorError5 = undefined;
+
+  try {
+    for (var _iterator5 = Object.entries(OPERATORS)[Symbol.iterator](), _step5; !(_iteratorNormalCompletion5 = (_step5 = _iterator5.next()).done); _iteratorNormalCompletion5 = true) {
+      var _ref = _step5.value;
+
+      var _ref2 = _slicedToArray(_ref, 2);
+
+      var operatorName = _ref2[0];
+      var operator = _ref2[1];
+
+      if (operatorName === token || operator.aliases.includes(token)) {
+        return operator;
+      }
+    }
+  } catch (err) {
+    _didIteratorError5 = true;
+    _iteratorError5 = err;
+  } finally {
+    try {
+      if (!_iteratorNormalCompletion5 && _iterator5.return) {
+        _iterator5.return();
+      }
+    } finally {
+      if (_didIteratorError5) {
+        throw _iteratorError5;
+      }
+    }
+  }
+
+  throw new Error('Unknown operator ' + token);
 }
 
 function isParen(token) {
   return token === '(' || token === ')';
 }
 
+function isNotOperatorAlias(token) {
+  return OPERATORS.not.aliases.includes(token);
+}
+
 function getPrecedence(operator) {
-  return OPERATORS[operator].precedence;
+  return getOperator(operator).precedence;
 }
 
 exports.parse = parse;
@@ -20230,11 +20324,10 @@ var TruthTable = function (_React$Component) {
           )
         );
       } catch (e) {
-        var error = e.toString();
+        var error = e.message;
         return _react2.default.createElement(
           'h4',
           null,
-          'Don\'t be dumb. ',
           error
         );
       }
@@ -20321,6 +20414,7 @@ var App = function (_React$Component) {
         }),
         _react2.default.createElement(_truthTable2.default, { formula: this.state.formula })
       );
+      // TODO: Footer.
     }
   }]);
 

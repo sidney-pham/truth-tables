@@ -54,8 +54,8 @@ class TruthTable extends React.Component {
         </table>
       );
     } catch (e) {
-      const error = e.toString();
-      return <h4>Don't be dumb. {error}</h4>;
+      const error = e.message;
+      return <h4>{error}</h4>;
     }
   }
 }
