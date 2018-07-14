@@ -22,12 +22,6 @@ class TruthTable extends React.Component {
       const parsedFormula = parse(lex(formula));
       const variables = getVariables(parsedFormula);
       const truthAssignments = getTruthAssignments(variables);
-      // Get formula.
-      // Lex and then parse the formula to create something like ['p', 'q', 'and'].
-      // Get the variables in the formula.
-      // Create a column for each variable in the formula.
-      // Create the 2^n rows, where n is the number of variables, containing all possible truth value assignments.
-      // Create the final column which calculates the result of the formula given a truth assignment.
 
       return (
         <table className={styles.truthTable}>

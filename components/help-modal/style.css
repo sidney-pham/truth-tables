@@ -22,10 +22,12 @@
 .content {
   width: 50%;
   position: relative;
-  margin: 10% auto;
-  padding: 30px;
+  margin: 10vh auto;
+  padding: 0;
   background: #fff;
   color: #444;
+  overflow: auto;
+  height: 80vh;
 }
 
 @media (max-width: 1080px) {
@@ -40,15 +42,29 @@
   }
 }
 
+.topBar {
+  padding: 0 30px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+  background-color: white;
+  padding-top: 30px;
+}
+
+.shadow {
+  box-shadow: 0px -5px 5px 5px rgba(0,0,0,0.75);
+}
+
 .closeButton {
-  color: #aaa;
-  font-size: 2em;
+  color: #777;
+  font-size: 2.5em;
   border: 0;
   background: none;
   transition: color 0.1s linear;
-  position: absolute;
-  top: 30px;
-  right: 30px; /* Fix hardcoding here. */
   cursor: pointer;
   padding: 0;
   margin: 0;
@@ -58,6 +74,27 @@
   color: #000;
 }
 
+.modalContent {
+  padding: 30px;
+  padding-top: 0;
+}
+
 .header {
-  margin: 0 0 30px 0;
+  margin: 0;
+}
+
+.operatorTable, .operatorTable td, .operatorTable th {
+  border: 1px solid black;
+}
+
+.operatorTable {
+  border-collapse: collapse;
+}
+
+.operatorTable td, .operatorTable th {
+  padding: 10px;
+}
+
+.operatorTable tr:nth-child(odd) {
+  background-color: #ddd;
 }

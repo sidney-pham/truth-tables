@@ -1,7 +1,9 @@
 // TODO: "weather is nice" and "day is sunday".
-// TODO: Detect malformed expressions.
+// TODO: Detect malformed expressions. E.g. 'a b c d'.
 // TODO: Detect unknown operators and give warnings.
 // TODO: T and F.
+// TODO: Limit number of variables in expression.
+// TODO: Ability to highlight T/F.
 
 // This saddens me too.
 Array.prototype.peek = function() {
@@ -14,10 +16,9 @@ Array.prototype.empty = function() {
 
 // The operators to support. The eval method modifies a provided stack with the
 // required result.
-// TODO: Provide support for symbols like '~' and '->'.
 const OPERATORS = {
   and: {
-    aliases: ['&', '&&', '^', '/\\', 'conjunction'],
+    aliases: ['∧', '⋅', '&', '&&', '^', '/\\', 'conjunction'],
     precedence: 3,
     eval: stack => {
       const right = stack.pop();
@@ -27,7 +28,7 @@ const OPERATORS = {
     }
   },
   or: {
-    aliases: ['|', '||', '\\/', 'disjunction'],
+    aliases: ['∨', '+', '|', '||', '\\/', 'disjunction'],
     precedence: 2,
     eval: stack => {
       const right = stack.pop();
@@ -37,7 +38,7 @@ const OPERATORS = {
     }
   },
   xor: {
-    aliases: ['exclusiveor', 'exclusive-or'],
+    aliases: ['⊕', '⊻', '⩒', '⩛', '↮', '≢', 'eor', 'exor', 'exclusiveor', 'exclusive-or'],
     precedence: 2, // I actually don't know what this should be.
     eval: stack => {
       const right = stack.pop();
@@ -47,7 +48,7 @@ const OPERATORS = {
     }
   },
   implies: {
-    aliases: ['->', '=>', 'then'],
+    aliases: ['→', '⇒', '->', '=>', 'then'],
     precedence: 1,
     eval: stack => {
       const right = stack.pop();
@@ -57,7 +58,7 @@ const OPERATORS = {
     }
   },
   not: {
-    aliases: ['~', '!', 'negation'],
+    aliases: ['¬', '~', '!', 'negation'],
     precedence: 4,
     eval: stack => {
       const operand = stack.pop();
@@ -66,7 +67,7 @@ const OPERATORS = {
     }
   },
   onlyif: {
-    aliases: ['<-', '<=', 'only-if'],
+    aliases: ['←', '⇐', '<-', '<=', 'only-if'],
     precedence: 1,
     eval: stack => {
       const right = stack.pop();
@@ -76,7 +77,7 @@ const OPERATORS = {
     }
   },
   iff: {
-    aliases: ['biconditional', 'if-and-only-if', 'ifandonlyif'],
+    aliases: ['↔', '⇔', '<->', '<=>', 'if-and-only-if', 'ifandonlyif', 'biconditional'],
     precedence: 0,
     eval: stack => {
       const right = stack.pop();

@@ -103,7 +103,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   // Override the current require with this new one
   return newRequire;
-})({18:[function(require,module,exports) {
+})({23:[function(require,module,exports) {
 /*
 object-assign
 (c) Sindre Sorhus
@@ -194,7 +194,7 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 
 	return to;
 };
-},{}],19:[function(require,module,exports) {
+},{}],24:[function(require,module,exports) {
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -248,7 +248,7 @@ function invariant(condition, format, a, b, c, d, e, f) {
 }
 
 module.exports = invariant;
-},{}],21:[function(require,module,exports) {
+},{}],26:[function(require,module,exports) {
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -266,7 +266,7 @@ if ('development' !== 'production') {
 }
 
 module.exports = emptyObject;
-},{}],22:[function(require,module,exports) {
+},{}],25:[function(require,module,exports) {
 "use strict";
 
 /**
@@ -303,7 +303,7 @@ emptyFunction.thatReturnsArgument = function (arg) {
 };
 
 module.exports = emptyFunction;
-},{}],20:[function(require,module,exports) {
+},{}],27:[function(require,module,exports) {
 /**
  * Copyright (c) 2014-present, Facebook, Inc.
  *
@@ -366,7 +366,7 @@ if ('development' !== 'production') {
 }
 
 module.exports = warning;
-},{"./emptyFunction":22}],47:[function(require,module,exports) {
+},{"./emptyFunction":25}],49:[function(require,module,exports) {
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -380,7 +380,7 @@ var ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
 
 module.exports = ReactPropTypesSecret;
 
-},{}],23:[function(require,module,exports) {
+},{}],34:[function(require,module,exports) {
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -459,7 +459,7 @@ function checkPropTypes(typeSpecs, values, location, componentName, getStack) {
 }
 
 module.exports = checkPropTypes;
-},{"./lib/ReactPropTypesSecret":47}],12:[function(require,module,exports) {
+},{"./lib/ReactPropTypesSecret":49}],12:[function(require,module,exports) {
 /** @license React v16.4.1
  * react.development.js
  *
@@ -1940,7 +1940,7 @@ if ('development' !== "production") {
     module.exports = react;
   })();
 }
-},{"object-assign":18,"fbjs/lib/invariant":19,"fbjs/lib/emptyObject":21,"fbjs/lib/warning":20,"fbjs/lib/emptyFunction":22,"prop-types/checkPropTypes":23}],6:[function(require,module,exports) {
+},{"object-assign":23,"fbjs/lib/invariant":24,"fbjs/lib/emptyObject":26,"fbjs/lib/warning":27,"fbjs/lib/emptyFunction":25,"prop-types/checkPropTypes":34}],8:[function(require,module,exports) {
 'use strict';
 
 if ('development' === 'production') {
@@ -1948,7 +1948,7 @@ if ('development' === 'production') {
 } else {
   module.exports = require('./cjs/react.development.js');
 }
-},{"./cjs/react.development.js":12}],32:[function(require,module,exports) {
+},{"./cjs/react.development.js":12}],28:[function(require,module,exports) {
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -1982,7 +1982,7 @@ var ExecutionEnvironment = {
 };
 
 module.exports = ExecutionEnvironment;
-},{}],33:[function(require,module,exports) {
+},{}],29:[function(require,module,exports) {
 'use strict';
 
 /**
@@ -2019,7 +2019,7 @@ function getActiveElement(doc) /*?DOMElement*/{
 }
 
 module.exports = getActiveElement;
-},{}],34:[function(require,module,exports) {
+},{}],30:[function(require,module,exports) {
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -2085,7 +2085,7 @@ function shallowEqual(objA, objB) {
 }
 
 module.exports = shallowEqual;
-},{}],65:[function(require,module,exports) {
+},{}],66:[function(require,module,exports) {
 'use strict';
 
 /**
@@ -2108,7 +2108,7 @@ function isNode(object) {
 }
 
 module.exports = isNode;
-},{}],50:[function(require,module,exports) {
+},{}],58:[function(require,module,exports) {
 'use strict';
 
 /**
@@ -2131,7 +2131,7 @@ function isTextNode(object) {
 }
 
 module.exports = isTextNode;
-},{"./isNode":65}],35:[function(require,module,exports) {
+},{"./isNode":66}],31:[function(require,module,exports) {
 'use strict';
 
 /**
@@ -2169,7 +2169,7 @@ function containsNode(outerNode, innerNode) {
 }
 
 module.exports = containsNode;
-},{"./isTextNode":50}],49:[function(require,module,exports) {
+},{"./isTextNode":58}],59:[function(require,module,exports) {
 'use strict';
 
 /**
@@ -2200,7 +2200,7 @@ function hyphenate(string) {
 }
 
 module.exports = hyphenate;
-},{}],36:[function(require,module,exports) {
+},{}],32:[function(require,module,exports) {
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -2237,7 +2237,7 @@ function hyphenateStyleName(string) {
 }
 
 module.exports = hyphenateStyleName;
-},{"./hyphenate":49}],51:[function(require,module,exports) {
+},{"./hyphenate":59}],56:[function(require,module,exports) {
 "use strict";
 
 /**
@@ -2267,7 +2267,7 @@ function camelize(string) {
 }
 
 module.exports = camelize;
-},{}],37:[function(require,module,exports) {
+},{}],33:[function(require,module,exports) {
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -2305,7 +2305,7 @@ function camelizeStyleName(string) {
 }
 
 module.exports = camelizeStyleName;
-},{"./camelize":51}],14:[function(require,module,exports) {
+},{"./camelize":56}],13:[function(require,module,exports) {
 /** @license React v16.4.1
  * react-dom.development.js
  *
@@ -19711,7 +19711,7 @@ if ('development' !== "production") {
     module.exports = reactDom;
   })();
 }
-},{"fbjs/lib/invariant":19,"react":6,"fbjs/lib/warning":20,"fbjs/lib/ExecutionEnvironment":32,"object-assign":18,"fbjs/lib/emptyFunction":22,"prop-types/checkPropTypes":23,"fbjs/lib/getActiveElement":33,"fbjs/lib/shallowEqual":34,"fbjs/lib/containsNode":35,"fbjs/lib/emptyObject":21,"fbjs/lib/hyphenateStyleName":36,"fbjs/lib/camelizeStyleName":37}],8:[function(require,module,exports) {
+},{"fbjs/lib/invariant":24,"react":8,"fbjs/lib/warning":27,"fbjs/lib/ExecutionEnvironment":28,"object-assign":23,"fbjs/lib/emptyFunction":25,"prop-types/checkPropTypes":34,"fbjs/lib/getActiveElement":29,"fbjs/lib/shallowEqual":30,"fbjs/lib/containsNode":31,"fbjs/lib/emptyObject":26,"fbjs/lib/hyphenateStyleName":32,"fbjs/lib/camelizeStyleName":33}],9:[function(require,module,exports) {
 'use strict';
 
 function checkDCE() {
@@ -19747,7 +19747,7 @@ if ('development' === 'production') {
 } else {
   module.exports = require('./cjs/react-dom.development.js');
 }
-},{"./cjs/react-dom.development.js":14}],67:[function(require,module,exports) {
+},{"./cjs/react-dom.development.js":13}],65:[function(require,module,exports) {
 var bundleURL = null;
 function getBundleURLCached() {
   if (!bundleURL) {
@@ -19777,7 +19777,7 @@ function getBaseURL(url) {
 
 exports.getBundleURL = getBundleURLCached;
 exports.getBaseURL = getBaseURL;
-},{}],55:[function(require,module,exports) {
+},{}],47:[function(require,module,exports) {
 var bundle = require('./bundle-url');
 
 function updateLink(link) {
@@ -19808,21 +19808,21 @@ function reloadCSS() {
 }
 
 module.exports = reloadCSS;
-},{"./bundle-url":67}],16:[function(require,module,exports) {
+},{"./bundle-url":65}],16:[function(require,module,exports) {
 
 var reloadCSS = require('_css_loader');
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
 module.exports = {
-        "app": "_app_1eusi_22",
-        "heading": "_heading_1eusi_32",
-        "description": "_description_1eusi_36",
-        "inputBox": "_inputBox_1eusi_40",
-        "footer": "_footer_1eusi_47",
-        "GitHubLogo": "_GitHubLogo_1eusi_54",
-        "helpButton": "_helpButton_1eusi_68"
+        "app": "_app_3udyz_22",
+        "heading": "_heading_3udyz_32",
+        "description": "_description_3udyz_36",
+        "inputBox": "_inputBox_3udyz_40",
+        "footer": "_footer_3udyz_61",
+        "GitHubLogo": "_GitHubLogo_3udyz_68",
+        "helpButton": "_helpButton_3udyz_82"
 };
-},{"_css_loader":55}],58:[function(require,module,exports) {
+},{"_css_loader":47}],51:[function(require,module,exports) {
 
 var reloadCSS = require('_css_loader');
 module.hot.dispose(reloadCSS);
@@ -19830,7 +19830,7 @@ module.hot.accept(reloadCSS);
 module.exports = {
         "truthTable": "_truthTable_1sph2_1"
 };
-},{"_css_loader":55}],59:[function(require,module,exports) {
+},{"_css_loader":47}],53:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -19844,7 +19844,6 @@ var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = [
 // TODO: Detect unknown operators and give warnings.
 // TODO: T and F.
 // TODO: Limit number of variables in expression.
-// TODO: Add explanatory text.
 // TODO: Ability to highlight T/F.
 
 // This saddens me too.
@@ -19858,10 +19857,9 @@ Array.prototype.empty = function () {
 
 // The operators to support. The eval method modifies a provided stack with the
 // required result.
-// TODO: Provide support for symbols like '~' and '->'.
 var OPERATORS = {
   and: {
-    aliases: ['&', '&&', '^', '/\\', '∧', 'conjunction'],
+    aliases: ['∧', '⋅', '&', '&&', '^', '/\\', 'conjunction'],
     precedence: 3,
     eval: function _eval(stack) {
       var right = stack.pop();
@@ -19871,7 +19869,7 @@ var OPERATORS = {
     }
   },
   or: {
-    aliases: ['|', '||', '\\/', 'disjunction'],
+    aliases: ['∨', '+', '|', '||', '\\/', 'disjunction'],
     precedence: 2,
     eval: function _eval(stack) {
       var right = stack.pop();
@@ -19881,7 +19879,7 @@ var OPERATORS = {
     }
   },
   xor: {
-    aliases: ['exclusiveor', 'exclusive-or'],
+    aliases: ['⊕', '⊻', '⩒', '⩛', '↮', '≢', 'eor', 'exor', 'exclusiveor', 'exclusive-or'],
     precedence: 2, // I actually don't know what this should be.
     eval: function _eval(stack) {
       var right = stack.pop();
@@ -19891,7 +19889,7 @@ var OPERATORS = {
     }
   },
   implies: {
-    aliases: ['->', '=>', 'then'],
+    aliases: ['→', '⇒', '->', '=>', 'then'],
     precedence: 1,
     eval: function _eval(stack) {
       var right = stack.pop();
@@ -19901,7 +19899,7 @@ var OPERATORS = {
     }
   },
   not: {
-    aliases: ['~', '!', '¬', 'negation'],
+    aliases: ['¬', '~', '!', 'negation'],
     precedence: 4,
     eval: function _eval(stack) {
       var operand = stack.pop();
@@ -19910,7 +19908,7 @@ var OPERATORS = {
     }
   },
   onlyif: {
-    aliases: ['<-', '<=', 'only-if'],
+    aliases: ['←', '⇐', '<-', '<=', 'only-if'],
     precedence: 1,
     eval: function _eval(stack) {
       var right = stack.pop();
@@ -19920,7 +19918,7 @@ var OPERATORS = {
     }
   },
   iff: {
-    aliases: ['biconditional', 'if-and-only-if', 'ifandonlyif'],
+    aliases: ['↔', '⇔', '<->', '<=>', 'if-and-only-if', 'ifandonlyif', 'biconditional'],
     precedence: 0,
     eval: function _eval(stack) {
       var right = stack.pop();
@@ -20227,7 +20225,7 @@ exports.lex = lex;
 exports.getVariables = getVariables;
 exports.getTruthAssignments = getTruthAssignments;
 exports.evaluate = evaluate;
-},{}],30:[function(require,module,exports) {
+},{}],18:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -20277,12 +20275,6 @@ var TruthTable = function (_React$Component) {
         var parsedFormula = (0, _helpers.parse)((0, _helpers.lex)(formula));
         var variables = (0, _helpers.getVariables)(parsedFormula);
         var truthAssignments = (0, _helpers.getTruthAssignments)(variables);
-        // Get formula.
-        // Lex and then parse the formula to create something like ['p', 'q', 'and'].
-        // Get the variables in the formula.
-        // Create a column for each variable in the formula.
-        // Create the 2^n rows, where n is the number of variables, containing all possible truth value assignments.
-        // Create the final column which calculates the result of the formula given a truth assignment.
 
         return _react2.default.createElement(
           'table',
@@ -20346,25 +20338,31 @@ var TruthTable = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = TruthTable;
-},{"react":6,"./style.css":58,"./helpers":59}],57:[function(require,module,exports) {
+},{"react":8,"./style.css":51,"./helpers":53}],52:[function(require,module,exports) {
 
 var reloadCSS = require('_css_loader');
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
 module.exports = {
-        "modal": "_modal_1fqcv_1",
-        "open": "_open_1fqcv_13",
-        "closed": "_closed_1fqcv_18",
-        "content": "_content_1fqcv_22",
-        "closeButton": "_closeButton_1fqcv_43",
-        "header": "_header_1fqcv_61"
+        "modal": "_modal_1sbhc_1",
+        "open": "_open_1sbhc_13",
+        "closed": "_closed_1sbhc_18",
+        "content": "_content_1sbhc_22",
+        "topBar": "_topBar_1sbhc_45",
+        "shadow": "_shadow_1sbhc_58",
+        "closeButton": "_closeButton_1sbhc_62",
+        "modalContent": "_modalContent_1sbhc_77",
+        "header": "_header_1sbhc_82",
+        "operatorTable": "_operatorTable_1sbhc_86"
 };
-},{"_css_loader":55}],31:[function(require,module,exports) {
+},{"_css_loader":47}],19:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = require('react');
 
@@ -20376,37 +20374,616 @@ var _style2 = _interopRequireDefault(_style);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function HelpModal(props) {
-  var open = props.open,
-      toggleOpen = props.toggleOpen;
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-  return _react2.default.createElement(
-    'div',
-    { className: _style2.default.modal + ' ' + (open ? _style2.default.open : _style2.default.closed) },
-    _react2.default.createElement(
-      'div',
-      { className: _style2.default.content },
-      _react2.default.createElement(
-        'button',
-        { type: 'button', onClick: toggleOpen, className: _style2.default.closeButton },
-        _react2.default.createElement('i', { className: 'fas fa-times' })
-      ),
-      _react2.default.createElement(
-        'h1',
-        { className: _style2.default.header },
-        'Help'
-      ),
-      _react2.default.createElement(
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var HelpModal = function (_React$Component) {
+  _inherits(HelpModal, _React$Component);
+
+  function HelpModal(props) {
+    _classCallCheck(this, HelpModal);
+
+    var _this = _possibleConstructorReturn(this, (HelpModal.__proto__ || Object.getPrototypeOf(HelpModal)).call(this, props));
+
+    _this.state = {
+      scrolledDown: false
+    };
+    _this.handleScroll = _this.handleScroll.bind(_this);
+    _this.handleEscape = _this.handleEscape.bind(_this);
+    _this.modal = _react2.default.createRef();
+    return _this;
+  }
+
+  _createClass(HelpModal, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      this.modal.current.addEventListener('scroll', this.handleScroll);
+      document.body.addEventListener('keypress', this.handleEscape);
+    }
+  }, {
+    key: 'componentWillUnmount',
+    value: function componentWillUnmount() {
+      this.modal.current.removeEventListener('scroll', this.handleScroll);
+      document.body.removeEventListener('keypress', this.handleEscape);
+    }
+  }, {
+    key: 'handleScroll',
+    value: function handleScroll(event) {
+      var scrollTop = event.target.scrollTop;
+
+      var scrolledDown = scrollTop > 0;
+      this.setState({ scrolledDown: scrolledDown });
+    }
+  }, {
+    key: 'handleEscape',
+    value: function handleEscape(event) {
+      var toggleOpen = this.props.toggleOpen;
+      var open = this.props.open;
+
+      if (open && event.key === 'Escape') {
+        toggleOpen(event);
+      }
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _props = this.props,
+          open = _props.open,
+          toggleOpen = _props.toggleOpen,
+          fillInput = _props.fillInput,
+          testFormula = _props.testFormula;
+      var scrolledDown = this.state.scrolledDown;
+
+
+      return _react2.default.createElement(
         'div',
-        null,
-        'This is a truth table generator. How cool!'
-      )
-    )
-  );
-}
+        { className: _style2.default.modal + ' ' + (open ? _style2.default.open : _style2.default.closed), onClick: toggleOpen },
+        _react2.default.createElement(
+          'div',
+          { ref: this.modal, className: _style2.default.content, onClick: function onClick(e) {
+              e.stopPropagation();
+            } },
+          _react2.default.createElement(
+            'div',
+            { className: _style2.default.topBar + ' ' + (scrolledDown ? _style2.default.shadow : '') },
+            _react2.default.createElement(
+              'h1',
+              { className: _style2.default.header },
+              'Help'
+            ),
+            _react2.default.createElement(
+              'button',
+              { type: 'button', onClick: toggleOpen, className: _style2.default.closeButton },
+              _react2.default.createElement('i', { className: 'far fa-window-close' })
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: _style2.default.modalContent },
+            _react2.default.createElement(
+              'div',
+              null,
+              'This is a truth table generator for classical propositional logic. It accepts operators in the forms below. Propositional variables are space delimited.'
+            ),
+            _react2.default.createElement(
+              'h3',
+              null,
+              'What is a propositional formula?'
+            ),
+            _react2.default.createElement(
+              'p',
+              null,
+              'A propositional formula is built up from propositions by using logical operators (also called logical connectives). A proposition is a statement that has an unambiguous truth value. For example, a propositional formula can be used to express the idea that \'pigs can fly ',
+              _react2.default.createElement(
+                'em',
+                null,
+                'and'
+              ),
+              ' ducks quack\'. By using propositional variables, this can be represented by a formula like ',
+              _react2.default.createElement(
+                'span',
+                { className: 'formula' },
+                'p and q'
+              ),
+              '.'
+            ),
+            _react2.default.createElement(
+              'h3',
+              null,
+              'Supported operators'
+            ),
+            _react2.default.createElement(
+              'table',
+              { className: _style2.default.operatorTable },
+              _react2.default.createElement(
+                'tbody',
+                null,
+                _react2.default.createElement(
+                  'tr',
+                  null,
+                  _react2.default.createElement(
+                    'th',
+                    null,
+                    'Conjunction'
+                  ),
+                  _react2.default.createElement(
+                    'td',
+                    null,
+                    _react2.default.createElement(
+                      'span',
+                      { className: 'formula' },
+                      '\u2227'
+                    ),
+                    ', ',
+                    _react2.default.createElement(
+                      'span',
+                      { className: 'formula' },
+                      '\u22C5'
+                    ),
+                    ', ',
+                    _react2.default.createElement(
+                      'span',
+                      { className: 'formula' },
+                      '&'
+                    ),
+                    ', ',
+                    _react2.default.createElement(
+                      'span',
+                      { className: 'formula' },
+                      '&&'
+                    ),
+                    ', ',
+                    _react2.default.createElement(
+                      'span',
+                      { className: 'formula' },
+                      '^'
+                    ),
+                    ', ',
+                    _react2.default.createElement(
+                      'span',
+                      { className: 'formula' },
+                      '/\\'
+                    ),
+                    ', ',
+                    _react2.default.createElement(
+                      'span',
+                      { className: 'formula' },
+                      'and'
+                    ),
+                    ', ',
+                    _react2.default.createElement(
+                      'span',
+                      { className: 'formula' },
+                      'conjunction'
+                    )
+                  )
+                ),
+                _react2.default.createElement(
+                  'tr',
+                  null,
+                  _react2.default.createElement(
+                    'th',
+                    null,
+                    'Disjunction'
+                  ),
+                  _react2.default.createElement(
+                    'td',
+                    null,
+                    _react2.default.createElement(
+                      'span',
+                      { className: 'formula' },
+                      '\u2228'
+                    ),
+                    ', ',
+                    _react2.default.createElement(
+                      'span',
+                      { className: 'formula' },
+                      '+'
+                    ),
+                    ', ',
+                    _react2.default.createElement(
+                      'span',
+                      { className: 'formula' },
+                      '|'
+                    ),
+                    ', ',
+                    _react2.default.createElement(
+                      'span',
+                      { className: 'formula' },
+                      '||'
+                    ),
+                    ', ',
+                    _react2.default.createElement(
+                      'span',
+                      { className: 'formula' },
+                      '\\/'
+                    ),
+                    ', ',
+                    _react2.default.createElement(
+                      'span',
+                      { className: 'formula' },
+                      'or'
+                    ),
+                    ', ',
+                    _react2.default.createElement(
+                      'span',
+                      { className: 'formula' },
+                      'disjunction'
+                    )
+                  )
+                ),
+                _react2.default.createElement(
+                  'tr',
+                  null,
+                  _react2.default.createElement(
+                    'th',
+                    null,
+                    'Exclusive Or'
+                  ),
+                  _react2.default.createElement(
+                    'td',
+                    null,
+                    _react2.default.createElement(
+                      'span',
+                      { className: 'formula' },
+                      '\u2295'
+                    ),
+                    ', ',
+                    _react2.default.createElement(
+                      'span',
+                      { className: 'formula' },
+                      '\u22BB'
+                    ),
+                    ', ',
+                    _react2.default.createElement(
+                      'span',
+                      { className: 'formula' },
+                      '\u2A52'
+                    ),
+                    ', ',
+                    _react2.default.createElement(
+                      'span',
+                      { className: 'formula' },
+                      '\u2A5B'
+                    ),
+                    ', ',
+                    _react2.default.createElement(
+                      'span',
+                      { className: 'formula' },
+                      '\u21AE'
+                    ),
+                    ', ',
+                    _react2.default.createElement(
+                      'span',
+                      { className: 'formula' },
+                      '\u2262'
+                    ),
+                    ', ',
+                    _react2.default.createElement(
+                      'span',
+                      { className: 'formula' },
+                      'xor'
+                    ),
+                    ', ',
+                    _react2.default.createElement(
+                      'span',
+                      { className: 'formula' },
+                      'eor'
+                    ),
+                    ', ',
+                    _react2.default.createElement(
+                      'span',
+                      { className: 'formula' },
+                      'exor'
+                    ),
+                    ', ',
+                    _react2.default.createElement(
+                      'span',
+                      { className: 'formula' },
+                      'exclusiveor'
+                    ),
+                    ', ',
+                    _react2.default.createElement(
+                      'span',
+                      { className: 'formula' },
+                      'exclusive-or'
+                    )
+                  )
+                ),
+                _react2.default.createElement(
+                  'tr',
+                  null,
+                  _react2.default.createElement(
+                    'th',
+                    null,
+                    'Material Implication'
+                  ),
+                  _react2.default.createElement(
+                    'td',
+                    null,
+                    _react2.default.createElement(
+                      'span',
+                      { className: 'formula' },
+                      '\u2192'
+                    ),
+                    ', ',
+                    _react2.default.createElement(
+                      'span',
+                      { className: 'formula' },
+                      '\u21D2'
+                    ),
+                    ', ',
+                    _react2.default.createElement(
+                      'span',
+                      { className: 'formula' },
+                      '->'
+                    ),
+                    ', ',
+                    _react2.default.createElement(
+                      'span',
+                      { className: 'formula' },
+                      '=>'
+                    ),
+                    ', ',
+                    _react2.default.createElement(
+                      'span',
+                      { className: 'formula' },
+                      'implies'
+                    ),
+                    ', ',
+                    _react2.default.createElement(
+                      'span',
+                      { className: 'formula' },
+                      'then'
+                    )
+                  )
+                ),
+                _react2.default.createElement(
+                  'tr',
+                  null,
+                  _react2.default.createElement(
+                    'th',
+                    null,
+                    'Negation'
+                  ),
+                  _react2.default.createElement(
+                    'td',
+                    null,
+                    _react2.default.createElement(
+                      'span',
+                      { className: 'formula' },
+                      '\xAC'
+                    ),
+                    ', ',
+                    _react2.default.createElement(
+                      'span',
+                      { className: 'formula' },
+                      '~'
+                    ),
+                    ', ',
+                    _react2.default.createElement(
+                      'span',
+                      { className: 'formula' },
+                      '!'
+                    ),
+                    ', ',
+                    _react2.default.createElement(
+                      'span',
+                      { className: 'formula' },
+                      'not'
+                    ),
+                    ', ',
+                    _react2.default.createElement(
+                      'span',
+                      { className: 'formula' },
+                      'negation'
+                    )
+                  )
+                ),
+                _react2.default.createElement(
+                  'tr',
+                  null,
+                  _react2.default.createElement(
+                    'th',
+                    null,
+                    'Converse Implication'
+                  ),
+                  _react2.default.createElement(
+                    'td',
+                    null,
+                    _react2.default.createElement(
+                      'span',
+                      { className: 'formula' },
+                      '\u2190'
+                    ),
+                    ', ',
+                    _react2.default.createElement(
+                      'span',
+                      { className: 'formula' },
+                      '\u21D0'
+                    ),
+                    ', ',
+                    _react2.default.createElement(
+                      'span',
+                      { className: 'formula' },
+                      '<-'
+                    ),
+                    ', ',
+                    _react2.default.createElement(
+                      'span',
+                      { className: 'formula' },
+                      '<='
+                    ),
+                    ', ',
+                    _react2.default.createElement(
+                      'span',
+                      { className: 'formula' },
+                      'onlyif'
+                    ),
+                    ', ',
+                    _react2.default.createElement(
+                      'span',
+                      { className: 'formula' },
+                      'only-if'
+                    )
+                  )
+                ),
+                _react2.default.createElement(
+                  'tr',
+                  null,
+                  _react2.default.createElement(
+                    'th',
+                    null,
+                    'Biconditional'
+                  ),
+                  _react2.default.createElement(
+                    'td',
+                    null,
+                    _react2.default.createElement(
+                      'span',
+                      { className: 'formula' },
+                      '\u2194'
+                    ),
+                    ', ',
+                    _react2.default.createElement(
+                      'span',
+                      { className: 'formula' },
+                      '\u21D4'
+                    ),
+                    ', ',
+                    _react2.default.createElement(
+                      'span',
+                      { className: 'formula' },
+                      '<->'
+                    ),
+                    ', ',
+                    _react2.default.createElement(
+                      'span',
+                      { className: 'formula' },
+                      '<=>'
+                    ),
+                    ', ',
+                    _react2.default.createElement(
+                      'span',
+                      { className: 'formula' },
+                      'iff'
+                    ),
+                    ', ',
+                    _react2.default.createElement(
+                      'span',
+                      { className: 'formula' },
+                      'if-and-only-if'
+                    ),
+                    ', ',
+                    _react2.default.createElement(
+                      'span',
+                      { className: 'formula' },
+                      'ifandonlyif'
+                    ),
+                    ', ',
+                    _react2.default.createElement(
+                      'span',
+                      { className: 'formula' },
+                      'biconditional'
+                    )
+                  )
+                )
+              )
+            ),
+            _react2.default.createElement(
+              'h3',
+              null,
+              'Operator Precedence'
+            ),
+            _react2.default.createElement(
+              'p',
+              null,
+              'A well-formed propositional formula can contain many parentheses. If operator precedence rules are assumed, parentheses can often be omitted, simplifying propositional formulas.'
+            ),
+            _react2.default.createElement(
+              'p',
+              null,
+              'For this generator, the operator precedence (from highest to lowest precedence) is:'
+            ),
+            _react2.default.createElement(
+              'ol',
+              null,
+              _react2.default.createElement(
+                'li',
+                null,
+                'Negation'
+              ),
+              _react2.default.createElement(
+                'li',
+                null,
+                'Conjunction'
+              ),
+              _react2.default.createElement(
+                'li',
+                null,
+                'Disjunction and Exclusive Or'
+              ),
+              _react2.default.createElement(
+                'li',
+                null,
+                'Material Implication and Only If'
+              ),
+              _react2.default.createElement(
+                'li',
+                null,
+                'Biconditional'
+              )
+            ),
+            _react2.default.createElement(
+              'p',
+              null,
+              'Ties are broken by order, with operators further to the right having higher precedence.'
+            ),
+            _react2.default.createElement(
+              'h3',
+              null,
+              'More features?'
+            ),
+            _react2.default.createElement(
+              'p',
+              null,
+              _react2.default.createElement(
+                'a',
+                { href: 'https://github.com/sidney-pham/truth-tables' },
+                'Make a pull request'
+              ),
+              '! Or ',
+              _react2.default.createElement(
+                'a',
+                { href: 'https://github.com/sidney-pham/truth-tables/issues' },
+                'create an issue'
+              ),
+              ' on GitHub.'
+            ),
+            _react2.default.createElement(
+              'h3',
+              null,
+              'Try it out!'
+            ),
+            _react2.default.createElement(
+              'span',
+              { className: 'formula try', onClick: fillInput },
+              testFormula
+            )
+          )
+        )
+      );
+    }
+  }]);
+
+  return HelpModal;
+}(_react2.default.Component);
 
 exports.default = HelpModal;
-},{"react":6,"./style.css":57}],10:[function(require,module,exports) {
+},{"react":8,"./style.css":52}],6:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -20447,21 +21024,21 @@ var App = function (_React$Component) {
 
     var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
 
+    var sampleFormulas = ['p and q implies ~r', 'p ∧ q → ¬r', '~p and q implies r iff (s or q)'];
+    var testFormula = sampleFormulas[Math.floor(Math.random() * sampleFormulas.length)];
     _this.state = {
       formula: '',
-      modalOpen: false
+      modalOpen: false,
+      testFormula: testFormula
     };
-    _this.handleChange = _this.handleChange.bind(_this);
     _this.toggleModal = _this.toggleModal.bind(_this);
+    _this.handleChange = _this.handleChange.bind(_this);
+    _this.fillInput = _this.fillInput.bind(_this);
+    _this.inputBox = _react2.default.createRef();
     return _this;
   }
 
   _createClass(App, [{
-    key: 'handleChange',
-    value: function handleChange(event) {
-      this.setState({ formula: event.target.value });
-    }
-  }, {
     key: 'toggleModal',
     value: function toggleModal() {
       this.setState(function (prevState) {
@@ -20469,11 +21046,24 @@ var App = function (_React$Component) {
       });
     }
   }, {
+    key: 'handleChange',
+    value: function handleChange(event) {
+      this.setState({ formula: event.target.value });
+    }
+  }, {
+    key: 'fillInput',
+    value: function fillInput(event) {
+      var formula = event.target.textContent;
+      this.setState({ formula: formula, modalOpen: false });
+      this.inputBox.current.focus();
+    }
+  }, {
     key: 'render',
     value: function render() {
       var _state = this.state,
           formula = _state.formula,
-          modalOpen = _state.modalOpen;
+          modalOpen = _state.modalOpen,
+          testFormula = _state.testFormula;
 
       return _react2.default.createElement(
         _react2.default.Fragment,
@@ -20494,10 +21084,17 @@ var App = function (_React$Component) {
           _react2.default.createElement(
             'p',
             { className: _style2.default.description },
-            'Enter a propositional formula. Try: \'~p and q implies r iff (s or q)\'.'
+            'Enter a propositional formula. Try: ',
+            _react2.default.createElement(
+              'span',
+              { className: 'formula try', onClick: this.fillInput },
+              testFormula
+            ),
+            '.'
           ),
           _react2.default.createElement('input', {
             autoFocus: true,
+            ref: this.inputBox,
             type: 'text',
             placeholder: 'Enter a formula',
             className: _style2.default.inputBox,
@@ -20506,7 +21103,7 @@ var App = function (_React$Component) {
           }),
           _react2.default.createElement(_truthTable2.default, { formula: formula })
         ),
-        _react2.default.createElement(_helpModal2.default, { open: modalOpen, toggleOpen: this.toggleModal }),
+        _react2.default.createElement(_helpModal2.default, { open: modalOpen, toggleOpen: this.toggleModal, fillInput: this.fillInput, testFormula: testFormula }),
         _react2.default.createElement(
           'footer',
           { className: _style2.default.footer },
@@ -20524,7 +21121,7 @@ var App = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = App;
-},{"react":6,"./style.css":16,"../truth-table":30,"../help-modal":31}],4:[function(require,module,exports) {
+},{"react":8,"./style.css":16,"../truth-table":18,"../help-modal":19}],4:[function(require,module,exports) {
 'use strict';
 
 var _react = require('react');
@@ -20542,7 +21139,7 @@ var _app2 = _interopRequireDefault(_app);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 _reactDom2.default.render(_react2.default.createElement(_app2.default, null), document.getElementById('root'));
-},{"react":6,"react-dom":8,"./components/app":10}],68:[function(require,module,exports) {
+},{"react":8,"react-dom":9,"./components/app":6}],67:[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 
@@ -20571,7 +21168,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '63901' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '52431' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 
@@ -20712,5 +21309,5 @@ function hmrAccept(bundle, id) {
     return hmrAccept(global.parcelRequire, id);
   });
 }
-},{}]},{},[68,4], null)
+},{}]},{},[67,4], null)
 //# sourceMappingURL=truth-tables.71636c9d.map
