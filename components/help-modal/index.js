@@ -47,7 +47,7 @@ class HelpModal extends React.Component {
         }}>
           <div className={`${styles.topBar} ${scrolledDown ? styles.shadow : ''}`}>
             <h1 className={styles.header}>Help</h1>
-            <button type="button" onClick={toggleOpen} className={styles.closeButton}><i className="far fa-window-close"></i></button>
+            <button type="button" onClick={toggleOpen} className={styles.closeButton}><i className="far fa-times-circle"></i></button>
           </div>
           <div className={styles.modalContent}>
             <div>This is a truth table generator for classical propositional logic. It accepts operators in the forms below. Propositional variables are space delimited.</div>
@@ -154,7 +154,7 @@ class HelpModal extends React.Component {
               <li>Material Implication and Only If</li>
               <li>Biconditional</li>
             </ol>
-            <p>Ties are broken by order, with operators further to the right having higher precedence.</p>
+            <p>Ties are broken by order, with operators further to the right in the formula having higher precedence.</p>
             <h3>More features?</h3>
             <p><a href="https://github.com/sidney-pham/truth-tables">Make a pull request</a>! Or <a href="https://github.com/sidney-pham/truth-tables/issues">create an issue</a> on GitHub.</p>
             <h3>Try it out!</h3>

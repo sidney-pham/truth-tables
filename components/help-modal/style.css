@@ -43,7 +43,7 @@
 }
 
 .topBar {
-  padding: 0 30px;
+  padding: 15px 30px;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -52,7 +52,6 @@
   position: -webkit-sticky;
   top: 0;
   background-color: white;
-  padding-top: 30px;
 }
 
 .shadow {

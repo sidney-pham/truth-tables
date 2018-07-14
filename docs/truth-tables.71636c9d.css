@@ -132,7 +132,7 @@ main {
   padding: 8px;
   text-align: center;
 }
-._modal_1sbhc_1 {
+._modal_f57ho_1 {
   position: fixed;
   background-color: rgba(0, 0, 0, 0.3);
   top: 0;
@@ -144,16 +144,16 @@ main {
   transition: all 0.3s;
 }
 
-._open_1sbhc_13 {
+._open_f57ho_13 {
   pointer-events: auto;
   opacity: 1;
 }
 
-._closed_1sbhc_18 {
+._closed_f57ho_18 {
   opacity: 0;
 }
 
-._content_1sbhc_22 {
+._content_f57ho_22 {
   width: 50%;
   position: relative;
   margin: 10vh auto;
@@ -165,19 +165,19 @@ main {
 }
 
 @media (max-width: 1080px) {
-  ._content_1sbhc_22 {
+  ._content_f57ho_22 {
     width: 70%;
   }
 }
 
 @media (max-width: 720px) {
-  ._content_1sbhc_22 {
+  ._content_f57ho_22 {
     width: 90%;
   }
 }
 
-._topBar_1sbhc_45 {
-  padding: 0 30px;
+._topBar_f57ho_45 {
+  padding: 15px 30px;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -186,14 +186,13 @@ main {
   position: -webkit-sticky;
   top: 0;
   background-color: white;
-  padding-top: 30px;
 }
 
-._shadow_1sbhc_58 {
+._shadow_f57ho_57 {
   box-shadow: 0px -5px 5px 5px rgba(0,0,0,0.75);
 }
 
-._closeButton_1sbhc_62 {
+._closeButton_f57ho_61 {
   color: #777;
   font-size: 2.5em;
   border: 0;
@@ -204,31 +203,31 @@ main {
   margin: 0;
 }
 
-._closeButton_1sbhc_62:hover {
+._closeButton_f57ho_61:hover {
   color: #000;
 }
 
-._modalContent_1sbhc_77 {
+._modalContent_f57ho_76 {
   padding: 30px;
   padding-top: 0;
 }
 
-._header_1sbhc_82 {
+._header_f57ho_81 {
   margin: 0;
 }
 
-._operatorTable_1sbhc_86, ._operatorTable_1sbhc_86 td, ._operatorTable_1sbhc_86 th {
+._operatorTable_f57ho_85, ._operatorTable_f57ho_85 td, ._operatorTable_f57ho_85 th {
   border: 1px solid black;
 }
 
-._operatorTable_1sbhc_86 {
+._operatorTable_f57ho_85 {
   border-collapse: collapse;
 }
 
-._operatorTable_1sbhc_86 td, ._operatorTable_1sbhc_86 th {
+._operatorTable_f57ho_85 td, ._operatorTable_f57ho_85 th {
   padding: 10px;
 }
 
-._operatorTable_1sbhc_86 tr:nth-child(odd) {
+._operatorTable_f57ho_85 tr:nth-child(odd) {
   background-color: #ddd;
 }
