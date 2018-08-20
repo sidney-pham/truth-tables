@@ -103,7 +103,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   // Override the current require with this new one
   return newRequire;
-})({22:[function(require,module,exports) {
+})({17:[function(require,module,exports) {
 /*
 object-assign
 (c) Sindre Sorhus
@@ -194,7 +194,7 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 
 	return to;
 };
-},{}],25:[function(require,module,exports) {
+},{}],21:[function(require,module,exports) {
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -248,7 +248,7 @@ function invariant(condition, format, a, b, c, d, e, f) {
 }
 
 module.exports = invariant;
-},{}],26:[function(require,module,exports) {
+},{}],19:[function(require,module,exports) {
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -266,7 +266,7 @@ if ('development' !== 'production') {
 }
 
 module.exports = emptyObject;
-},{}],23:[function(require,module,exports) {
+},{}],20:[function(require,module,exports) {
 "use strict";
 
 /**
@@ -303,7 +303,7 @@ emptyFunction.thatReturnsArgument = function (arg) {
 };
 
 module.exports = emptyFunction;
-},{}],24:[function(require,module,exports) {
+},{}],18:[function(require,module,exports) {
 /**
  * Copyright (c) 2014-present, Facebook, Inc.
  *
@@ -366,7 +366,7 @@ if ('development' !== 'production') {
 }
 
 module.exports = warning;
-},{"./emptyFunction":23}],47:[function(require,module,exports) {
+},{"./emptyFunction":20}],36:[function(require,module,exports) {
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -380,7 +380,7 @@ var ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
 
 module.exports = ReactPropTypesSecret;
 
-},{}],27:[function(require,module,exports) {
+},{}],22:[function(require,module,exports) {
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -459,8 +459,8 @@ function checkPropTypes(typeSpecs, values, location, componentName, getStack) {
 }
 
 module.exports = checkPropTypes;
-},{"./lib/ReactPropTypesSecret":47}],12:[function(require,module,exports) {
-/** @license React v16.4.1
+},{"./lib/ReactPropTypesSecret":36}],12:[function(require,module,exports) {
+/** @license React v16.4.2
  * react.development.js
  *
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -484,7 +484,7 @@ if ('development' !== "production") {
 
     // TODO: this is special because it gets imported during build.
 
-    var ReactVersion = '16.4.1';
+    var ReactVersion = '16.4.2';
 
     // The Symbol used to tag the ReactElement-like types. If there is no native Symbol
     // nor polyfill, then a plain number is used for performance.
@@ -1940,7 +1940,7 @@ if ('development' !== "production") {
     module.exports = react;
   })();
 }
-},{"object-assign":22,"fbjs/lib/invariant":25,"fbjs/lib/emptyObject":26,"fbjs/lib/warning":24,"fbjs/lib/emptyFunction":23,"prop-types/checkPropTypes":27}],6:[function(require,module,exports) {
+},{"object-assign":17,"fbjs/lib/invariant":21,"fbjs/lib/emptyObject":19,"fbjs/lib/warning":18,"fbjs/lib/emptyFunction":20,"prop-types/checkPropTypes":22}],6:[function(require,module,exports) {
 'use strict';
 
 if ('development' === 'production') {
@@ -1948,7 +1948,7 @@ if ('development' === 'production') {
 } else {
   module.exports = require('./cjs/react.development.js');
 }
-},{"./cjs/react.development.js":12}],34:[function(require,module,exports) {
+},{"./cjs/react.development.js":12}],23:[function(require,module,exports) {
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -1982,7 +1982,7 @@ var ExecutionEnvironment = {
 };
 
 module.exports = ExecutionEnvironment;
-},{}],35:[function(require,module,exports) {
+},{}],24:[function(require,module,exports) {
 'use strict';
 
 /**
@@ -2019,7 +2019,7 @@ function getActiveElement(doc) /*?DOMElement*/{
 }
 
 module.exports = getActiveElement;
-},{}],36:[function(require,module,exports) {
+},{}],25:[function(require,module,exports) {
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -2085,7 +2085,7 @@ function shallowEqual(objA, objB) {
 }
 
 module.exports = shallowEqual;
-},{}],65:[function(require,module,exports) {
+},{}],40:[function(require,module,exports) {
 'use strict';
 
 /**
@@ -2108,7 +2108,7 @@ function isNode(object) {
 }
 
 module.exports = isNode;
-},{}],49:[function(require,module,exports) {
+},{}],32:[function(require,module,exports) {
 'use strict';
 
 /**
@@ -2131,7 +2131,7 @@ function isTextNode(object) {
 }
 
 module.exports = isTextNode;
-},{"./isNode":65}],37:[function(require,module,exports) {
+},{"./isNode":40}],26:[function(require,module,exports) {
 'use strict';
 
 /**
@@ -2169,7 +2169,7 @@ function containsNode(outerNode, innerNode) {
 }
 
 module.exports = containsNode;
-},{"./isTextNode":49}],50:[function(require,module,exports) {
+},{"./isTextNode":32}],33:[function(require,module,exports) {
 'use strict';
 
 /**
@@ -2200,7 +2200,7 @@ function hyphenate(string) {
 }
 
 module.exports = hyphenate;
-},{}],38:[function(require,module,exports) {
+},{}],27:[function(require,module,exports) {
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -2237,7 +2237,7 @@ function hyphenateStyleName(string) {
 }
 
 module.exports = hyphenateStyleName;
-},{"./hyphenate":50}],51:[function(require,module,exports) {
+},{"./hyphenate":33}],31:[function(require,module,exports) {
 "use strict";
 
 /**
@@ -2267,7 +2267,7 @@ function camelize(string) {
 }
 
 module.exports = camelize;
-},{}],39:[function(require,module,exports) {
+},{}],28:[function(require,module,exports) {
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -2305,8 +2305,8 @@ function camelizeStyleName(string) {
 }
 
 module.exports = camelizeStyleName;
-},{"./camelize":51}],14:[function(require,module,exports) {
-/** @license React v16.4.1
+},{"./camelize":31}],13:[function(require,module,exports) {
+/** @license React v16.4.2
  * react-dom.development.js
  *
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -4866,14 +4866,15 @@ if ('development' !== "production") {
     var ROOT_ATTRIBUTE_NAME = 'data-reactroot';
     var VALID_ATTRIBUTE_NAME_REGEX = new RegExp('^[' + ATTRIBUTE_NAME_START_CHAR + '][' + ATTRIBUTE_NAME_CHAR + ']*$');
 
+    var hasOwnProperty = Object.prototype.hasOwnProperty;
     var illegalAttributeNameCache = {};
     var validatedAttributeNameCache = {};
 
     function isAttributeNameSafe(attributeName) {
-      if (validatedAttributeNameCache.hasOwnProperty(attributeName)) {
+      if (hasOwnProperty.call(validatedAttributeNameCache, attributeName)) {
         return true;
       }
-      if (illegalAttributeNameCache.hasOwnProperty(attributeName)) {
+      if (hasOwnProperty.call(illegalAttributeNameCache, attributeName)) {
         return false;
       }
       if (VALID_ATTRIBUTE_NAME_REGEX.test(attributeName)) {
@@ -9197,7 +9198,7 @@ if ('development' !== "production") {
     var rARIA = new RegExp('^(aria)-[' + ATTRIBUTE_NAME_CHAR + ']*$');
     var rARIACamel = new RegExp('^(aria)[A-Z][' + ATTRIBUTE_NAME_CHAR + ']*$');
 
-    var hasOwnProperty = Object.prototype.hasOwnProperty;
+    var hasOwnProperty$1 = Object.prototype.hasOwnProperty;
 
     function getStackAddendum() {
       var stack = ReactDebugCurrentFrame.getStackAddendum();
@@ -9205,7 +9206,7 @@ if ('development' !== "production") {
     }
 
     function validateProperty(tagName, name) {
-      if (hasOwnProperty.call(warnedProperties, name) && warnedProperties[name]) {
+      if (hasOwnProperty$1.call(warnedProperties, name) && warnedProperties[name]) {
         return true;
       }
 
@@ -19211,7 +19212,7 @@ if ('development' !== "production") {
 
     // TODO: this is special because it gets imported during build.
 
-    var ReactVersion = '16.4.1';
+    var ReactVersion = '16.4.2';
 
     // TODO: This type is shared between the reconciler and ReactDOM, but will
     // eventually be lifted out to the renderer.
@@ -19711,7 +19712,7 @@ if ('development' !== "production") {
     module.exports = reactDom;
   })();
 }
-},{"fbjs/lib/invariant":25,"react":6,"fbjs/lib/warning":24,"fbjs/lib/ExecutionEnvironment":34,"object-assign":22,"fbjs/lib/emptyFunction":23,"prop-types/checkPropTypes":27,"fbjs/lib/getActiveElement":35,"fbjs/lib/shallowEqual":36,"fbjs/lib/containsNode":37,"fbjs/lib/emptyObject":26,"fbjs/lib/hyphenateStyleName":38,"fbjs/lib/camelizeStyleName":39}],10:[function(require,module,exports) {
+},{"fbjs/lib/invariant":21,"react":6,"fbjs/lib/warning":18,"fbjs/lib/ExecutionEnvironment":23,"object-assign":17,"fbjs/lib/emptyFunction":20,"prop-types/checkPropTypes":22,"fbjs/lib/getActiveElement":24,"fbjs/lib/shallowEqual":25,"fbjs/lib/containsNode":26,"fbjs/lib/emptyObject":19,"fbjs/lib/hyphenateStyleName":27,"fbjs/lib/camelizeStyleName":28}],7:[function(require,module,exports) {
 'use strict';
 
 function checkDCE() {
@@ -19747,7 +19748,7 @@ if ('development' === 'production') {
 } else {
   module.exports = require('./cjs/react-dom.development.js');
 }
-},{"./cjs/react-dom.development.js":14}],66:[function(require,module,exports) {
+},{"./cjs/react-dom.development.js":13}],38:[function(require,module,exports) {
 var bundleURL = null;
 function getBundleURLCached() {
   if (!bundleURL) {
@@ -19777,7 +19778,7 @@ function getBaseURL(url) {
 
 exports.getBundleURL = getBundleURLCached;
 exports.getBaseURL = getBaseURL;
-},{}],61:[function(require,module,exports) {
+},{}],37:[function(require,module,exports) {
 var bundle = require('./bundle-url');
 
 function updateLink(link) {
@@ -19808,7 +19809,7 @@ function reloadCSS() {
 }
 
 module.exports = reloadCSS;
-},{"./bundle-url":66}],16:[function(require,module,exports) {
+},{"./bundle-url":38}],16:[function(require,module,exports) {
 
 var reloadCSS = require('_css_loader');
 module.hot.dispose(reloadCSS);
@@ -19822,7 +19823,7 @@ module.exports = {
         "GitHubLogo": "_GitHubLogo_3udyz_68",
         "helpButton": "_helpButton_3udyz_82"
 };
-},{"_css_loader":61}],56:[function(require,module,exports) {
+},{"_css_loader":37}],34:[function(require,module,exports) {
 
 var reloadCSS = require('_css_loader');
 module.hot.dispose(reloadCSS);
@@ -19830,7 +19831,7 @@ module.hot.accept(reloadCSS);
 module.exports = {
         "truthTable": "_truthTable_1sph2_1"
 };
-},{"_css_loader":61}],57:[function(require,module,exports) {
+},{"_css_loader":37}],35:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -19840,9 +19841,9 @@ Object.defineProperty(exports, "__esModule", {
 var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
 
 // TODO: "weather is nice" and "day is sunday".
+// TODO: T and F.
 // TODO: Detect malformed expressions. E.g. 'a b c d'.
 // TODO: Detect unknown operators and give warnings.
-// TODO: T and F.
 // TODO: Limit number of variables in expression.
 // TODO: Ability to highlight T/F.
 
@@ -19908,7 +19909,7 @@ var OPERATORS = {
     }
   },
   onlyif: {
-    aliases: ['←', '⇐', '<-', '<=', 'only-if'],
+    aliases: ['←', '←', '⇐', '<-', '<=', 'only-if'],
     precedence: 1,
     eval: function _eval(stack) {
       var right = stack.pop();
@@ -20225,7 +20226,7 @@ exports.lex = lex;
 exports.getVariables = getVariables;
 exports.getTruthAssignments = getTruthAssignments;
 exports.evaluate = evaluate;
-},{}],18:[function(require,module,exports) {
+},{}],30:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -20338,7 +20339,7 @@ var TruthTable = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = TruthTable;
-},{"react":6,"./style.css":56,"./helpers":57}],55:[function(require,module,exports) {
+},{"react":6,"./style.css":34,"./helpers":35}],39:[function(require,module,exports) {
 
 var reloadCSS = require('_css_loader');
 module.hot.dispose(reloadCSS);
@@ -20355,7 +20356,7 @@ module.exports = {
         "header": "_header_f57ho_81",
         "operatorTable": "_operatorTable_f57ho_85"
 };
-},{"_css_loader":61}],19:[function(require,module,exports) {
+},{"_css_loader":37}],29:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -20699,6 +20700,48 @@ var HelpModal = function (_React$Component) {
                   _react2.default.createElement(
                     'th',
                     null,
+                    'Negation'
+                  ),
+                  _react2.default.createElement(
+                    'td',
+                    null,
+                    _react2.default.createElement(
+                      'span',
+                      { className: 'formula' },
+                      '\xAC'
+                    ),
+                    ', ',
+                    _react2.default.createElement(
+                      'span',
+                      { className: 'formula' },
+                      '~'
+                    ),
+                    ', ',
+                    _react2.default.createElement(
+                      'span',
+                      { className: 'formula' },
+                      '!'
+                    ),
+                    ', ',
+                    _react2.default.createElement(
+                      'span',
+                      { className: 'formula' },
+                      'not'
+                    ),
+                    ', ',
+                    _react2.default.createElement(
+                      'span',
+                      { className: 'formula' },
+                      'negation'
+                    )
+                  )
+                ),
+                _react2.default.createElement(
+                  'tr',
+                  null,
+                  _react2.default.createElement(
+                    'th',
+                    null,
                     'Material Implication'
                   ),
                   _react2.default.createElement(
@@ -20738,48 +20781,6 @@ var HelpModal = function (_React$Component) {
                       'span',
                       { className: 'formula' },
                       'then'
-                    )
-                  )
-                ),
-                _react2.default.createElement(
-                  'tr',
-                  null,
-                  _react2.default.createElement(
-                    'th',
-                    null,
-                    'Negation'
-                  ),
-                  _react2.default.createElement(
-                    'td',
-                    null,
-                    _react2.default.createElement(
-                      'span',
-                      { className: 'formula' },
-                      '\xAC'
-                    ),
-                    ', ',
-                    _react2.default.createElement(
-                      'span',
-                      { className: 'formula' },
-                      '~'
-                    ),
-                    ', ',
-                    _react2.default.createElement(
-                      'span',
-                      { className: 'formula' },
-                      '!'
-                    ),
-                    ', ',
-                    _react2.default.createElement(
-                      'span',
-                      { className: 'formula' },
-                      'not'
-                    ),
-                    ', ',
-                    _react2.default.createElement(
-                      'span',
-                      { className: 'formula' },
-                      'negation'
                     )
                   )
                 ),
@@ -20929,7 +20930,7 @@ var HelpModal = function (_React$Component) {
               _react2.default.createElement(
                 'li',
                 null,
-                'Material Implication and Only If'
+                'Material Implication and Converse Implication'
               ),
               _react2.default.createElement(
                 'li',
@@ -20983,7 +20984,7 @@ var HelpModal = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = HelpModal;
-},{"react":6,"./style.css":55}],8:[function(require,module,exports) {
+},{"react":6,"./style.css":39}],10:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -21121,7 +21122,7 @@ var App = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = App;
-},{"react":6,"./style.css":16,"../truth-table":18,"../help-modal":19}],4:[function(require,module,exports) {
+},{"react":6,"./style.css":16,"../truth-table":30,"../help-modal":29}],4:[function(require,module,exports) {
 'use strict';
 
 var _react = require('react');
@@ -21139,7 +21140,7 @@ var _app2 = _interopRequireDefault(_app);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 _reactDom2.default.render(_react2.default.createElement(_app2.default, null), document.getElementById('root'));
-},{"react":6,"react-dom":10,"./components/app":8}],67:[function(require,module,exports) {
+},{"react":6,"react-dom":7,"./components/app":10}],41:[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 
@@ -21168,7 +21169,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '53265' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '61902' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 
@@ -21309,5 +21310,5 @@ function hmrAccept(bundle, id) {
     return hmrAccept(global.parcelRequire, id);
   });
 }
-},{}]},{},[67,4], null)
+},{}]},{},[41,4], null)
 //# sourceMappingURL=truth-tables.71636c9d.map

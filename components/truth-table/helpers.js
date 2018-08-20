@@ -1,7 +1,7 @@
 // TODO: "weather is nice" and "day is sunday".
+// TODO: T and F.
 // TODO: Detect malformed expressions. E.g. 'a b c d'.
 // TODO: Detect unknown operators and give warnings.
-// TODO: T and F.
 // TODO: Limit number of variables in expression.
 // TODO: Ability to highlight T/F.
 
@@ -67,7 +67,7 @@ const OPERATORS = {
     }
   },
   onlyif: {
-    aliases: ['←', '⇐', '<-', '<=', 'only-if'],
+    aliases: ['←', '←', '⇐', '<-', '<=', 'only-if'],
     precedence: 1,
     eval: stack => {
       const right = stack.pop();

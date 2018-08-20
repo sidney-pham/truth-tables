@@ -98,6 +98,16 @@ class HelpModal extends React.Component {
                   </td>
                 </tr>
                 <tr>
+                  <th>Negation</th>
+                  <td>
+                    <span className="formula">¬</span>
+                    , <span className="formula">~</span>
+                    , <span className="formula">!</span>
+                    , <span className="formula">not</span>
+                    , <span className="formula">negation</span>
+                  </td>
+                </tr>
+                <tr>
                   <th>Material Implication</th>
                   <td>
                     <span className="formula">→</span>
@@ -106,16 +116,6 @@ class HelpModal extends React.Component {
                     , <span className="formula">=></span>
                     , <span className="formula">implies</span>
                     , <span className="formula">then</span>
-                  </td>
-                </tr>
-                <tr>
-                  <th>Negation</th>
-                  <td>
-                    <span className="formula">¬</span>
-                    , <span className="formula">~</span>
-                    , <span className="formula">!</span>
-                    , <span className="formula">not</span>
-                    , <span className="formula">negation</span>
                   </td>
                 </tr>
                 <tr>
@@ -151,7 +151,7 @@ class HelpModal extends React.Component {
               <li>Negation</li>
               <li>Conjunction</li>
               <li>Disjunction and Exclusive Or</li>
-              <li>Material Implication and Only If</li>
+              <li>Material Implication and Converse Implication</li>
               <li>Biconditional</li>
             </ol>
             <p>Ties are broken by order, with operators further to the right in the formula having higher precedence.</p>
