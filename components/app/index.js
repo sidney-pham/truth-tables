@@ -47,6 +47,8 @@ class App extends React.Component {
           <button type="button" className={styles.helpButton} onClick={this.toggleModal} title="Help"><i className="far fa-question-circle"></i></button>
           <p className={styles.description}>Enter a propositional formula. Try: <span className="formula try" onClick={this.fillInput}>{testFormula}</span>.</p>
           <input
+            autoComplete="off"
+            spellCheck="false"
             autoFocus
             ref={this.inputBox}
             type="text"

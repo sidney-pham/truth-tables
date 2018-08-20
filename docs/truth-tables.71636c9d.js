@@ -21094,6 +21094,8 @@ var App = function (_React$Component) {
             '.'
           ),
           _react2.default.createElement('input', {
+            autoComplete: 'off',
+            spellCheck: 'false',
             autoFocus: true,
             ref: this.inputBox,
             type: 'text',
@@ -21140,7 +21142,7 @@ var _app2 = _interopRequireDefault(_app);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 _reactDom2.default.render(_react2.default.createElement(_app2.default, null), document.getElementById('root'));
-},{"react":6,"react-dom":7,"./components/app":10}],41:[function(require,module,exports) {
+},{"react":6,"react-dom":7,"./components/app":10}],33:[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 
@@ -21169,7 +21171,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '61902' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '62241' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 
@@ -21310,5 +21312,5 @@ function hmrAccept(bundle, id) {
     return hmrAccept(global.parcelRequire, id);
   });
 }
-},{}]},{},[41,4], null)
+},{}]},{},[33,4], null)
 //# sourceMappingURL=truth-tables.71636c9d.map
